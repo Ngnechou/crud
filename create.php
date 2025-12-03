@@ -2,10 +2,10 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
-    $stmt = $pdo->prepare("INSERT INTO produits (description, prix, quantite) VALUES (?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO produits (description, prix, quantite, name) VALUES (?, ?, ?, ?)");
     
     
-    $stmt->execute([$_POST['description'], $_POST['prix'], $_POST['quantite']]);
+    $stmt->execute([$_POST['description'], $_POST['prix'], $_POST['quantite'], $_POST['name']]);
     
   
     header("Location: index.php");
@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h2>Ajouter un produit</h2>
 <form method="post">
+    <input type="text" name="name" placeholder="name" ><br>
     <input type="text" name="description" placeholder="Description" ><br>
     <input type="number" name="prix" placeholder="Prix" ><br>
     <input type="number" name="quantite" placeholder="Quantité" ><br>

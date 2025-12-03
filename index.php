@@ -5,6 +5,7 @@
 <table border="1" cellpadding="5">
 <tr>
   <th>ID</th>
+  <th>name</th>
   <th>Description</th>
   <th>Prix</th>
   <th>Quantité</th>
@@ -17,6 +18,7 @@ foreach ($produits as $p):
 ?>
 <tr>
   <td><?= $p['id'] ?></td> 
+  <td><?= $p['name'] ?></td> 
   <td><?= $p['description'] ?></td>
   <td><?= $p['prix'] ?></td>
   <td><?= $p['quantite'] ?></td>
